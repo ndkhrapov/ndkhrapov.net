@@ -6,6 +6,11 @@ The public link directory lives in `links/index.html` and is served at
 [links.ndkhrapov.net](https://links.ndkhrapov.net/) and `/links/` on the personal
 website.
 
+Directory brand icons use [Simple Icons 15.0.0](https://github.com/simple-icons/simple-icons/tree/15.0.0)
+(CC0) and [Font Awesome Free 6.7.2](https://github.com/FortAwesome/Font-Awesome/tree/6.7.2)
+(Xbox, Yahoo, and Yandex SVG icons, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+The directory embeds their paths in SVG symbols so they inherit the page colors.
+
 ## Hosting and deploy
 
 The site is self-hosted, not on GitHub Pages:
