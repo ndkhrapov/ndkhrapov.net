@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikita Khrapov</title>
+  <title data-ru="Никита Храпов">Nikita Khrapov</title>
   <meta name="description" content="Nikita Khrapov, 3D artist and full-stack web developer.">
   <meta name="theme-color" content="#131e1b">
   <link rel="canonical" href="https://me.ndkhrapov.net/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=5">
+  <link rel="stylesheet" href="./styles.css?v=6">
   <link rel="stylesheet" href="./gravatar.css">
+  <script src="./profile.js" defer></script>
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://me.ndkhrapov.net/">
   <meta property="og:title" content="Nikita Khrapov">
@@ -19,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-  <a class="skip-link" href="#about">Skip to content</a>
+  <a class="skip-link" href="#about" data-ru="Перейти к содержанию">Skip to content</a>
   <div class="site">
     <div class="scene" aria-hidden="true">
       <img src="./header.webp" width="2048" height="1543" alt="" fetchpriority="high">
@@ -27,40 +28,64 @@
 
     <header class="top-bar">
       <div class="frame top-layout">
-        <a class="brand" href="./" aria-label="Nikita Khrapov home">
+        <a class="brand" href="./" aria-label="Nikita Khrapov home" data-ru-label="Никита Храпов, главная страница">
           <img src="./favicon.svg" width="36" height="36" alt="">
           <span>@n.d.khrapov</span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#about" aria-current="page">About</a>
-          <a href="/links">Links</a>
-          <a href="mailto:n.d.khrapov@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+        <nav aria-label="Main navigation" data-ru-label="Главное меню">
+          <a href="#about" aria-current="page" data-ru="Обо мне">About</a>
+          <a href="/links" data-ru="Ссылки">Links</a>
+          <a href="mailto:n.d.khrapov@gmail.com"><span data-ru="Контакты">Contact</span> <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
 
     <main class="frame hero" id="about">
       <figure class="portrait">
-        <img src="./profile.webp?v=2" width="768" height="768" alt="Portrait of Nikita Khrapov">
+        <img src="./profile.webp?v=2" width="768" height="768" alt="Portrait of Nikita Khrapov" data-ru-alt="Портрет Никиты Храпова">
       </figure>
 
       <div class="hero-copy">
-        <p class="eyebrow"><span class="diamond" aria-hidden="true"></span> Personal site</p>
-        <h1>Nikita <em>Khrapov</em></h1>
-        <p class="role">3D artist and full-stack web developer.</p>
-
-        <dl class="personal-details" aria-label="Personal details">
-          <div>
-            <dt>Date of birth</dt>
-            <dd><time datetime="2000-07-16">16 July 2000</time></dd>
-          </div>
-          <div>
-            <dt>Pronouns</dt>
-            <dd>he/him/his</dd>
-          </div>
-        </dl>
+        <p class="eyebrow"><span class="diamond" aria-hidden="true"></span> <span data-ru="Личный сайт">Personal site</span></p>
+        <h1><span data-ru="Никита">Nikita</span> <em data-ru="Храпов">Khrapov</em></h1>
+        <p class="role" data-ru="3D-художник и фулстек-разработчик.">3D artist and full-stack web developer.</p>
+        <p class="pronouns" data-ru="он/его">he/him/his</p>
       </div>
     </main>
+
+    <footer class="information-bar">
+      <dl class="frame personal-details" aria-label="Personal details" data-ru-label="Личные данные">
+        <div class="info-name">
+          <dt data-ru="Полное имя">Full name</dt>
+          <dd data-ru="Никита Денисович Храпов">Nikita Denisovich Khrapov</dd>
+        </div>
+        <div>
+          <dt data-ru="Дата рождения">Date of birth</dt>
+          <dd><time datetime="2000-07-16" data-ru="16 июля 2000">2000 July 16th</time></dd>
+        </div>
+        <div>
+          <dt data-ru="Время в Иркутске">Irkutsk time</dt>
+          <dd class="local-time"><time id="irkutsk-time">—</time></dd>
+        </div>
+        <div class="info-location">
+          <dt data-ru="Местоположение">Location</dt>
+          <dd data-ru="Иркутск, Российская Федерация">City of Irkutsk, Russian Federation</dd>
+        </div>
+        <div class="info-email">
+          <dt data-ru="Электронная почта">Email</dt>
+          <dd><a href="mailto:n.d.khrapov@gmail.com">n.d.khrapov@gmail.com</a></dd>
+        </div>
+        <div class="language-control">
+          <dt><label for="site-language" data-ru="Язык">Language</label></dt>
+          <dd>
+            <select id="site-language" disabled>
+              <option value="en" lang="en">English</option>
+              <option value="ru" lang="ru">Русский</option>
+            </select>
+          </dd>
+        </div>
+      </dl>
+    </footer>
   </div>
 </body>
 </html>

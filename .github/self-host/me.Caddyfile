@@ -17,7 +17,7 @@ https://me.ndkhrapov.net {
 		}
 
 		@gravatar path /header.webp /profile.webp /gravatar.css
-		@unexpected not path / /index.html /styles.css /favicon.svg /header.webp /profile.webp /gravatar.css
+		@unexpected not path / /index.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
 		error @unexpected 404
 		file_server @gravatar {
 			root /srv/.gravatar/current
