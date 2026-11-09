@@ -183,10 +183,30 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   --accent: #282828;
 }
 
+.links-page[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #161616;
+  --ink: #fafafa;
+  --accent: #dedede;
+}
+
+@media (prefers-color-scheme: dark) {
+  .links-page:not([data-theme]) {
+    color-scheme: dark;
+    --page: #161616;
+    --ink: #fafafa;
+    --accent: #dedede;
+  }
+}
+
 .link-directory {
   padding: 1rem;
   font: 0.9rem/1.55 var(--mono);
 }
+
+.theme-picker { margin-block-end: 0.75rem; }
+.theme-picker:not([hidden]) { display: block; }
+.theme-picker select { font: inherit; }
 
 .link-directory ul {
   margin: 0;
