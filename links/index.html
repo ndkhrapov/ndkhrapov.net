@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nikita Khrapov’s websites, profiles, and home network directory.">
+  <meta name="description" content="Nikita Khrapov’s profiles and a directory of webmail, social, gaming, shopping, and other sites.">
   <meta name="theme-color" content="#10211d">
   <title>Links · Nikita Khrapov</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/links/directory.css">
+  <link rel="stylesheet" href="/links/directory.css?v=2">
 </head>
 <body>
-  <header class="masthead">
+  <header class="masthead" id="top">
     <div class="wrap masthead-inner">
       <a class="brand" href="https://ndkhrapov.net/">
         <span class="monogram" aria-hidden="true">NK</span>
         Nikita Khrapov
       </a>
-      <span class="edition">Personal directory</span>
+      <span class="edition">Web directory</span>
     </div>
   </header>
 
@@ -24,14 +24,31 @@
     <div class="intro">
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span> links.ndkhrapov.net</p>
       <h1>My links<span>.</span></h1>
-      <p>Websites, online profiles, and shortcuts to the services I run at home.</p>
+      <p>My profiles and shortcuts to mail, social sites, games, shops, and tools.</p>
     </div>
 
-    <div class="directory">
-      <section class="group" aria-labelledby="web">
+    <nav class="categories" aria-label="Jump to a category">
+      <ul>
+        <li><a href="#profiles">Personal</a></li>
+        <li><a href="#mail">Mail</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#gaming">Games</a></li>
+        <li><a href="#shopping">Shopping</a></li>
+        <li><a href="#payments">Support</a></li>
+        <li><a href="#ai">AI</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#create">Create</a></li>
+      </ul>
+    </nav>
+
+    <div class="directory public-directory">
+      <section class="group" id="profiles" aria-labelledby="profiles-heading">
         <header class="group-heading">
-          <p class="eyebrow">01 / Web</p>
-          <h2 id="web">Websites &amp; code</h2>
+          <p class="eyebrow">01 / Personal</p>
+          <h2 id="profiles-heading">My profiles</h2>
         </header>
         <ul class="entries">
           <li><a class="entry" href="https://ndkhrapov.net/">
@@ -41,64 +58,626 @@
           </a></li>
           <li><a class="entry" href="https://github.com/ndkhrapov" rel="me">
             <span class="symbol" aria-hidden="true">GH</span>
-            <span><strong>GitHub</strong><small>github.com/ndkhrapov</small></span>
+            <span><strong>GitHub</strong><small>@ndkhrapov</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
-        </ul>
-      </section>
-
-      <section class="group" aria-labelledby="social">
-        <header class="group-heading">
-          <p class="eyebrow">02 / Social</p>
-          <h2 id="social">Social &amp; chat</h2>
-        </header>
-        <ul class="entries">
           <li><a class="entry" href="https://instagram.com/n.d.khrapov" rel="me">
-            <span class="symbol"><span class="icon instagram" aria-hidden="true"></span></span>
+            <span class="symbol" aria-hidden="true"><span class="icon instagram"></span></span>
             <span><strong>Instagram</strong><small>@n.d.khrapov</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
           <li><a class="entry" href="https://twitter.com/ndkhrapov" rel="me">
-            <span class="symbol"><span class="icon twitter" aria-hidden="true"></span></span>
+            <span class="symbol" aria-hidden="true"><span class="icon twitter"></span></span>
             <span><strong>Twitter / X</strong><small>@ndkhrapov</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
           <li><a class="entry" href="https://discord.com/users/281485925865881600" rel="me">
-            <span class="symbol"><span class="icon discord" aria-hidden="true"></span></span>
+            <span class="symbol" aria-hidden="true"><span class="icon discord"></span></span>
             <span><strong>Discord</strong><small>Discord profile</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
-        </ul>
-      </section>
-
-      <section class="group" aria-labelledby="play">
-        <header class="group-heading">
-          <p class="eyebrow">03 / Play</p>
-          <h2 id="play">Music &amp; games</h2>
-        </header>
-        <ul class="entries">
           <li><a class="entry" href="https://open.spotify.com/user/p5egjznjq1l8l3v9f7fo3ro2e" rel="me">
-            <span class="symbol"><span class="icon spotify" aria-hidden="true"></span></span>
+            <span class="symbol" aria-hidden="true"><span class="icon spotify"></span></span>
             <span><strong>Spotify</strong><small>Spotify profile</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
           <li><a class="entry" href="https://steamcommunity.com/id/GoodGuyLimony/" rel="me">
-            <span class="symbol"><span class="icon steam" aria-hidden="true"></span></span>
+            <span class="symbol" aria-hidden="true"><span class="icon steam"></span></span>
             <span><strong>Steam</strong><small>GoodGuyLimony</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
         </ul>
       </section>
 
-      <section class="group local" aria-labelledby="local">
+      <section class="group" id="mail" aria-labelledby="mail-heading">
         <header class="group-heading">
-          <p class="eyebrow">04 / Local</p>
-          <h2 id="local">Home network</h2>
+          <p class="eyebrow">02 / Mail</p>
+          <h2 id="mail-heading">Webmail</h2>
         </header>
         <ul class="entries">
-          <li><a class="entry" href="http://links.lan/">
-            <span class="symbol" aria-hidden="true">LAN</span>
-            <span><strong>Local services</strong><small>Open from home Wi-Fi or Ethernet</small></span>
+          <li><a class="entry" href="https://mail.google.com/">
+            <span class="symbol" aria-hidden="true">GM</span>
+            <span><strong>Gmail</strong><small>mail.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://outlook.live.com/mail/">
+            <span class="symbol" aria-hidden="true">OL</span>
+            <span><strong>Outlook</strong><small>outlook.live.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.icloud.com/mail/">
+            <span class="symbol" aria-hidden="true">IC</span>
+            <span><strong>iCloud Mail</strong><small>icloud.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://mail.yandex.com/">
+            <span class="symbol" aria-hidden="true">YA</span>
+            <span><strong>Yandex Mail</strong><small>mail.yandex.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://e.mail.ru/inbox/">
+            <span class="symbol" aria-hidden="true">MR</span>
+            <span><strong>Mail.ru</strong><small>e.mail.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://mail.rambler.ru/">
+            <span class="symbol" aria-hidden="true">RM</span>
+            <span><strong>Rambler Mail</strong><small>mail.rambler.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://mail.yahoo.com/">
+            <span class="symbol" aria-hidden="true">YM</span>
+            <span><strong>Yahoo Mail</strong><small>mail.yahoo.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://mail.proton.me/">
+            <span class="symbol" aria-hidden="true">PM</span>
+            <span><strong>Proton Mail</strong><small>mail.proton.me</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="social" aria-labelledby="social-heading">
+        <header class="group-heading">
+          <p class="eyebrow">03 / Social</p>
+          <h2 id="social-heading">Social &amp; communities</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.facebook.com/">
+            <span class="symbol" aria-hidden="true">FB</span>
+            <span><strong>Facebook</strong><small>facebook.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.threads.com/">
+            <span class="symbol" aria-hidden="true">TH</span>
+            <span><strong>Threads</strong><small>threads.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.tiktok.com/">
+            <span class="symbol" aria-hidden="true">TT</span>
+            <span><strong>TikTok</strong><small>tiktok.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.reddit.com/">
+            <span class="symbol" aria-hidden="true">RD</span>
+            <span><strong>Reddit</strong><small>reddit.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.linkedin.com/">
+            <span class="symbol" aria-hidden="true">IN</span>
+            <span><strong>LinkedIn</strong><small>linkedin.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.pinterest.com/">
+            <span class="symbol" aria-hidden="true">PI</span>
+            <span><strong>Pinterest</strong><small>pinterest.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://vk.com/">
+            <span class="symbol" aria-hidden="true">VK</span>
+            <span><strong>VKontakte (VK)</strong><small>vk.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://bsky.app/">
+            <span class="symbol" aria-hidden="true">BS</span>
+            <span><strong>Bluesky</strong><small>bsky.app</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://joinmastodon.org/">
+            <span class="symbol" aria-hidden="true">MA</span>
+            <span><strong>Mastodon</strong><small>joinmastodon.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.tumblr.com/">
+            <span class="symbol" aria-hidden="true">TU</span>
+            <span><strong>Tumblr</strong><small>tumblr.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://ok.ru/">
+            <span class="symbol" aria-hidden="true">OK</span>
+            <span><strong>Odnoklassniki</strong><small>ok.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="chat" aria-labelledby="chat-heading">
+        <header class="group-heading">
+          <p class="eyebrow">04 / Chat</p>
+          <h2 id="chat-heading">Messaging &amp; calls</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://web.whatsapp.com/">
+            <span class="symbol" aria-hidden="true">WA</span>
+            <span><strong>WhatsApp Web</strong><small>web.whatsapp.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://web.telegram.org/">
+            <span class="symbol" aria-hidden="true">TG</span>
+            <span><strong>Telegram Web</strong><small>web.telegram.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.messenger.com/">
+            <span class="symbol" aria-hidden="true">MS</span>
+            <span><strong>Messenger</strong><small>messenger.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://signal.org/">
+            <span class="symbol" aria-hidden="true">SI</span>
+            <span><strong>Signal</strong><small>signal.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.viber.com/">
+            <span class="symbol" aria-hidden="true">VI</span>
+            <span><strong>Viber</strong><small>viber.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.wechat.com/">
+            <span class="symbol" aria-hidden="true">WC</span>
+            <span><strong>WeChat</strong><small>wechat.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://meet.google.com/">
+            <span class="symbol" aria-hidden="true">ME</span>
+            <span><strong>Google Meet</strong><small>meet.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://zoom.us/">
+            <span class="symbol" aria-hidden="true">ZM</span>
+            <span><strong>Zoom</strong><small>zoom.us</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="media" aria-labelledby="media-heading">
+        <header class="group-heading">
+          <p class="eyebrow">05 / Media</p>
+          <h2 id="media-heading">Video &amp; music</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.youtube.com/">
+            <span class="symbol" aria-hidden="true">YT</span>
+            <span><strong>YouTube</strong><small>youtube.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.twitch.tv/">
+            <span class="symbol" aria-hidden="true">TW</span>
+            <span><strong>Twitch</strong><small>twitch.tv</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.netflix.com/">
+            <span class="symbol" aria-hidden="true">NF</span>
+            <span><strong>Netflix</strong><small>netflix.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://music.apple.com/">
+            <span class="symbol" aria-hidden="true">AM</span>
+            <span><strong>Apple Music</strong><small>music.apple.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://music.youtube.com/">
+            <span class="symbol" aria-hidden="true">YM</span>
+            <span><strong>YouTube Music</strong><small>music.youtube.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://soundcloud.com/">
+            <span class="symbol" aria-hidden="true">SC</span>
+            <span><strong>SoundCloud</strong><small>soundcloud.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://bandcamp.com/">
+            <span class="symbol" aria-hidden="true">BC</span>
+            <span><strong>Bandcamp</strong><small>bandcamp.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://music.yandex.ru/">
+            <span class="symbol" aria-hidden="true">YA</span>
+            <span><strong>Yandex Music</strong><small>music.yandex.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.kinopoisk.ru/">
+            <span class="symbol" aria-hidden="true">KP</span>
+            <span><strong>Kinopoisk</strong><small>kinopoisk.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://rutube.ru/">
+            <span class="symbol" aria-hidden="true">RT</span>
+            <span><strong>RUTUBE</strong><small>rutube.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="gaming" aria-labelledby="gaming-heading">
+        <header class="group-heading">
+          <p class="eyebrow">06 / Games</p>
+          <h2 id="gaming-heading">Gaming</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.xbox.com/">
+            <span class="symbol" aria-hidden="true">XB</span>
+            <span><strong>Xbox</strong><small>xbox.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.roblox.com/">
+            <span class="symbol" aria-hidden="true">RB</span>
+            <span><strong>Roblox</strong><small>roblox.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://store.epicgames.com/">
+            <span class="symbol" aria-hidden="true">EG</span>
+            <span><strong>Epic Games Store</strong><small>store.epicgames.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.playstation.com/">
+            <span class="symbol" aria-hidden="true">PS</span>
+            <span><strong>PlayStation</strong><small>playstation.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.nintendo.com/">
+            <span class="symbol" aria-hidden="true">NI</span>
+            <span><strong>Nintendo</strong><small>nintendo.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.gog.com/">
+            <span class="symbol" aria-hidden="true">GG</span>
+            <span><strong>GOG</strong><small>gog.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://itch.io/">
+            <span class="symbol" aria-hidden="true">IO</span>
+            <span><strong>itch.io</strong><small>itch.io</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://battle.net/">
+            <span class="symbol" aria-hidden="true">BN</span>
+            <span><strong>Battle.net</strong><small>battle.net</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.nexusmods.com/">
+            <span class="symbol" aria-hidden="true">NM</span>
+            <span><strong>Nexus Mods</strong><small>nexusmods.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://mods.paradoxplaza.com/">
+            <span class="symbol" aria-hidden="true">PD</span>
+            <span><strong>Paradox Mods</strong><small>mods.paradoxplaza.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="shopping" aria-labelledby="shopping-heading">
+        <header class="group-heading">
+          <p class="eyebrow">07 / Shopping</p>
+          <h2 id="shopping-heading">Shopping &amp; marketplaces</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.amazon.com/">
+            <span class="symbol" aria-hidden="true">AZ</span>
+            <span><strong>Amazon</strong><small>amazon.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.ebay.com/">
+            <span class="symbol" aria-hidden="true">EB</span>
+            <span><strong>eBay</strong><small>ebay.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.etsy.com/">
+            <span class="symbol" aria-hidden="true">ET</span>
+            <span><strong>Etsy</strong><small>etsy.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.aliexpress.com/">
+            <span class="symbol" aria-hidden="true">AE</span>
+            <span><strong>AliExpress</strong><small>aliexpress.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.alibaba.com/">
+            <span class="symbol" aria-hidden="true">AB</span>
+            <span><strong>Alibaba</strong><small>alibaba.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.temu.com/">
+            <span class="symbol" aria-hidden="true">TE</span>
+            <span><strong>Temu</strong><small>temu.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.ozon.ru/">
+            <span class="symbol" aria-hidden="true">OZ</span>
+            <span><strong>Ozon</strong><small>ozon.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.wildberries.ru/">
+            <span class="symbol" aria-hidden="true">WB</span>
+            <span><strong>Wildberries</strong><small>wildberries.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.avito.ru/">
+            <span class="symbol" aria-hidden="true">AV</span>
+            <span><strong>Avito</strong><small>avito.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://market.yandex.ru/">
+            <span class="symbol" aria-hidden="true">YM</span>
+            <span><strong>Yandex Market</strong><small>market.yandex.ru</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="payments" aria-labelledby="payments-heading">
+        <header class="group-heading">
+          <p class="eyebrow">08 / Support</p>
+          <h2 id="payments-heading">Payments &amp; creator support</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.paypal.com/">
+            <span class="symbol" aria-hidden="true">PP</span>
+            <span><strong>PayPal</strong><small>paypal.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.donationalerts.com/">
+            <span class="symbol" aria-hidden="true">DA</span>
+            <span><strong>DonationAlerts</strong><small>donationalerts.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://boosty.to/">
+            <span class="symbol" aria-hidden="true">BO</span>
+            <span><strong>Boosty</strong><small>boosty.to</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.patreon.com/">
+            <span class="symbol" aria-hidden="true">PA</span>
+            <span><strong>Patreon</strong><small>patreon.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://ko-fi.com/">
+            <span class="symbol" aria-hidden="true">KF</span>
+            <span><strong>Ko-fi</strong><small>ko-fi.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://buymeacoffee.com/">
+            <span class="symbol" aria-hidden="true">BC</span>
+            <span><strong>Buy Me a Coffee</strong><small>buymeacoffee.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://github.com/sponsors">
+            <span class="symbol" aria-hidden="true">GH</span>
+            <span><strong>GitHub Sponsors</strong><small>github.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://gumroad.com/">
+            <span class="symbol" aria-hidden="true">GU</span>
+            <span><strong>Gumroad</strong><small>gumroad.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="ai" aria-labelledby="ai-heading">
+        <header class="group-heading">
+          <p class="eyebrow">09 / AI</p>
+          <h2 id="ai-heading">AI assistants</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://chatgpt.com/">
+            <span class="symbol" aria-hidden="true">CG</span>
+            <span><strong>ChatGPT</strong><small>chatgpt.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://claude.ai/">
+            <span class="symbol" aria-hidden="true">CL</span>
+            <span><strong>Claude</strong><small>claude.ai</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://gemini.google.com/">
+            <span class="symbol" aria-hidden="true">GE</span>
+            <span><strong>Gemini</strong><small>gemini.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://copilot.microsoft.com/">
+            <span class="symbol" aria-hidden="true">CO</span>
+            <span><strong>Microsoft Copilot</strong><small>copilot.microsoft.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.perplexity.ai/">
+            <span class="symbol" aria-hidden="true">PX</span>
+            <span><strong>Perplexity</strong><small>perplexity.ai</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://chat.deepseek.com/">
+            <span class="symbol" aria-hidden="true">DS</span>
+            <span><strong>DeepSeek</strong><small>chat.deepseek.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://chat.mistral.ai/">
+            <span class="symbol" aria-hidden="true">MV</span>
+            <span><strong>Mistral Vibe</strong><small>chat.mistral.ai</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://notebooklm.google.com/">
+            <span class="symbol" aria-hidden="true">NB</span>
+            <span><strong>NotebookLM</strong><small>notebooklm.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="reference" aria-labelledby="reference-heading">
+        <header class="group-heading">
+          <p class="eyebrow">10 / Reference</p>
+          <h2 id="reference-heading">Reference &amp; discovery</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.wikipedia.org/">
+            <span class="symbol" aria-hidden="true">WP</span>
+            <span><strong>Wikipedia</strong><small>wikipedia.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.fandom.com/">
+            <span class="symbol" aria-hidden="true">FA</span>
+            <span><strong>Fandom</strong><small>fandom.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://archive.org/">
+            <span class="symbol" aria-hidden="true">IA</span>
+            <span><strong>Internet Archive</strong><small>archive.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.google.com/">
+            <span class="symbol" aria-hidden="true">GO</span>
+            <span><strong>Google</strong><small>google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://yandex.com/">
+            <span class="symbol" aria-hidden="true">YA</span>
+            <span><strong>Yandex</strong><small>yandex.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://duckduckgo.com/">
+            <span class="symbol" aria-hidden="true">DD</span>
+            <span><strong>DuckDuckGo</strong><small>duckduckgo.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.imdb.com/">
+            <span class="symbol" aria-hidden="true">IM</span>
+            <span><strong>IMDb</strong><small>imdb.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://maps.google.com/">
+            <span class="symbol" aria-hidden="true">GM</span>
+            <span><strong>Google Maps</strong><small>maps.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.openstreetmap.org/">
+            <span class="symbol" aria-hidden="true">OS</span>
+            <span><strong>OpenStreetMap</strong><small>openstreetmap.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://translate.google.com/">
+            <span class="symbol" aria-hidden="true">GT</span>
+            <span><strong>Google Translate</strong><small>translate.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="work" aria-labelledby="work-heading">
+        <header class="group-heading">
+          <p class="eyebrow">11 / Work</p>
+          <h2 id="work-heading">Files &amp; productivity</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://drive.google.com/">
+            <span class="symbol" aria-hidden="true">GD</span>
+            <span><strong>Google Drive</strong><small>drive.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://calendar.google.com/">
+            <span class="symbol" aria-hidden="true">GC</span>
+            <span><strong>Google Calendar</strong><small>calendar.google.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://onedrive.live.com/">
+            <span class="symbol" aria-hidden="true">OD</span>
+            <span><strong>OneDrive</strong><small>onedrive.live.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.dropbox.com/">
+            <span class="symbol" aria-hidden="true">DB</span>
+            <span><strong>Dropbox</strong><small>dropbox.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.notion.so/">
+            <span class="symbol" aria-hidden="true">NO</span>
+            <span><strong>Notion</strong><small>notion.so</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://trello.com/">
+            <span class="symbol" aria-hidden="true">TR</span>
+            <span><strong>Trello</strong><small>trello.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://slack.com/">
+            <span class="symbol" aria-hidden="true">SL</span>
+            <span><strong>Slack</strong><small>slack.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://disk.yandex.com/">
+            <span class="symbol" aria-hidden="true">YD</span>
+            <span><strong>Yandex Disk</strong><small>disk.yandex.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" id="create" aria-labelledby="create-heading">
+        <header class="group-heading">
+          <p class="eyebrow">12 / Create</p>
+          <h2 id="create-heading">Design &amp; development</h2>
+        </header>
+        <ul class="entries">
+          <li><a class="entry" href="https://www.figma.com/">
+            <span class="symbol" aria-hidden="true">FI</span>
+            <span><strong>Figma</strong><small>figma.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.behance.net/">
+            <span class="symbol" aria-hidden="true">BE</span>
+            <span><strong>Behance</strong><small>behance.net</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.artstation.com/">
+            <span class="symbol" aria-hidden="true">AS</span>
+            <span><strong>ArtStation</strong><small>artstation.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://sketchfab.com/">
+            <span class="symbol" aria-hidden="true">SF</span>
+            <span><strong>Sketchfab</strong><small>sketchfab.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://www.blender.org/">
+            <span class="symbol" aria-hidden="true">BL</span>
+            <span><strong>Blender</strong><small>blender.org</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://gitlab.com/">
+            <span class="symbol" aria-hidden="true">GL</span>
+            <span><strong>GitLab</strong><small>gitlab.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://stackoverflow.com/">
+            <span class="symbol" aria-hidden="true">SO</span>
+            <span><strong>Stack Overflow</strong><small>stackoverflow.com</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="entry" href="https://developer.mozilla.org/">
+            <span class="symbol" aria-hidden="true">MD</span>
+            <span><strong>MDN Web Docs</strong><small>developer.mozilla.org</small></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a></li>
         </ul>
@@ -107,8 +686,8 @@
   </main>
 
   <footer class="wrap footer">
-    <span>Nikita Khrapov</span>
-    <a href="https://ndkhrapov.net/">Back to my website <span aria-hidden="true">↗</span></a>
+    <a href="https://ndkhrapov.net/">Nikita Khrapov <span aria-hidden="true">↗</span></a>
+    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
 </body>
 </html>
