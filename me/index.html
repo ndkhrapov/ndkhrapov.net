@@ -8,7 +8,8 @@
   <meta name="theme-color" content="#131e1b">
   <link rel="canonical" href="https://me.ndkhrapov.net/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=6">
+  <script src="/links/appearance.js?v=1"></script>
+  <link rel="stylesheet" href="./styles.css?v=7">
   <link rel="stylesheet" href="./gravatar.css">
   <script src="./profile.js" defer></script>
   <meta property="og:type" content="profile">
@@ -29,14 +30,26 @@
     <header class="top-bar">
       <div class="frame top-layout">
         <a class="brand" href="./" aria-label="Nikita Khrapov home" data-ru-label="Никита Храпов, главная страница">
-          <img src="./favicon.svg" width="36" height="36" alt="">
+          <img src="./favicon.svg" width="30" height="30" alt="">
           <span>@n.d.khrapov</span>
         </a>
-        <nav aria-label="Main navigation" data-ru-label="Главное меню">
-          <a href="#about" aria-current="page" data-ru="Обо мне">About</a>
-          <a href="/links" data-ru="Ссылки">Links</a>
-          <a href="mailto:n.d.khrapov@gmail.com"><span data-ru="Контакты">Contact</span> <span aria-hidden="true">↗</span></a>
-        </nav>
+        <div class="controls">
+          <label hidden>
+            <span class="control-label" data-ru="Тема">Theme</span>
+            <select id="links-theme" aria-label="Theme" data-ru-label="Тема">
+              <option value="system" data-ru="Авто">Auto</option>
+              <option value="light" data-ru="Светлая">Light</option>
+              <option value="dark" data-ru="Тёмная">Dark</option>
+            </select>
+          </label>
+          <label>
+            <span class="control-label" data-ru="Язык">Language</span>
+            <select id="site-language" aria-label="Language" data-ru-label="Язык" disabled>
+              <option value="en" lang="en">English</option>
+              <option value="ru" lang="ru">Русский</option>
+            </select>
+          </label>
+        </div>
       </div>
     </header>
 
@@ -46,10 +59,12 @@
       </figure>
 
       <div class="hero-copy">
-        <p class="eyebrow"><span class="diamond" aria-hidden="true"></span> <span data-ru="Личный сайт">Personal site</span></p>
-        <h1><span data-ru="Никита">Nikita</span> <em data-ru="Храпов">Khrapov</em></h1>
+        <h1><span data-ru="Никита">Nikita</span> <span data-ru="Храпов">Khrapov</span></h1>
         <p class="role" data-ru="3D-художник и фулстек-разработчик.">3D artist and full-stack web developer.</p>
-        <p class="pronouns" data-ru="он/его">he/him/his</p>
+        <div class="profile-links">
+          <span data-ru="он/его">he/him/his</span>
+          <a href="/links" data-ru="Ссылки">Links</a>
+        </div>
       </div>
     </main>
 
@@ -74,15 +89,6 @@
         <div class="info-email">
           <dt data-ru="Электронная почта">Email</dt>
           <dd><a href="mailto:n.d.khrapov@gmail.com">n.d.khrapov@gmail.com</a></dd>
-        </div>
-        <div class="language-control">
-          <dt><label for="site-language" data-ru="Язык">Language</label></dt>
-          <dd>
-            <select id="site-language" disabled>
-              <option value="en" lang="en">English</option>
-              <option value="ru" lang="ru">Русский</option>
-            </select>
-          </dd>
         </div>
       </dl>
     </footer>
