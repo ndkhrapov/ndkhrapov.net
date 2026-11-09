@@ -1,0 +1,13 @@
+{
+  "id": "https://links.ndkhrapov.net/",
+  "name": "Nikita Khrapov’s Links",
+  "short_name": "Nikita’s Links",
+  "start_url": "https://links.ndkhrapov.net/",
+  "scope": "https://links.ndkhrapov.net/",
+  "display": "standalone",
+  "background_color": "#f6f3ed",
+  "icons": [
+    { "src": "/links/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/links/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

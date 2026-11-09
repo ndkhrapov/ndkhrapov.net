@@ -7,7 +7,9 @@
   <meta name="color-scheme" content="light dark">
   <title>Links · Nikita Khrapov</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/links/directory.css?v=3">
+  <link rel="stylesheet" href="/links/directory.css?v=4">
+  <link rel="manifest" href="/links/site.webmanifest">
+  <script src="/links/appearance.js" defer></script>
 </head>
 <body>
   <svg class="icon-definitions" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -56,221 +58,255 @@
         Nikita Khrapov
       </a>
       <span class="edition">Profiles &amp; contact</span>
+      <label class="appearance" hidden>
+        Accent
+        <select id="accent">
+          <option value="device">Device</option>
+          <option value="clay">Clay</option>
+          <option value="ocean">Ocean</option>
+          <option value="moss">Moss</option>
+          <option value="iris">Iris</option>
+        </select>
+      </label>
     </div>
   </header>
 
-  <main class="wrap">
-    <div class="intro">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> links.ndkhrapov.net</p>
-      <h1>My links<span>.</span></h1>
-      <p>Find me across the web or send me an email.</p>
+  <main>
+    <div class="wrap hero">
+      <div class="intro">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Nikita Khrapov</p>
+        <h1>My links<span>.</span></h1>
+        <p>Find me across the web or send me an email.</p>
+      </div>
+      <svg class="hero-art" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g class="hero-grid" fill="none" stroke="currentColor">
+          <path d="M0 52h640M0 104h640M0 156h640M0 208h640M80 0v260M160 0v260M240 0v260M320 0v260M400 0v260M480 0v260M560 0v260"/>
+        </g>
+        <g class="hero-orbits" fill="none" stroke="currentColor" stroke-width="1.5">
+          <ellipse cx="320" cy="130" rx="242" ry="66" transform="rotate(-18 320 130)"/>
+          <ellipse cx="320" cy="130" rx="242" ry="66" transform="rotate(18 320 130)"/>
+          <ellipse cx="320" cy="130" rx="182" ry="88"/>
+        </g>
+        <g class="hero-nodes" fill="currentColor">
+          <circle cx="320" cy="130" r="13"/>
+          <circle cx="148" cy="159" r="8"/>
+          <circle cx="492" cy="101" r="8"/>
+          <circle cx="320" cy="42" r="5"/>
+          <circle cx="320" cy="218" r="5"/>
+        </g>
+      </svg>
     </div>
 
-    <nav class="main-links" aria-label="Main links">
-      <ul>
-        <li><a href="mailto:n.d.khrapov@gmail.com"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg><span>Email</span></a></li>
-        <li><a href="https://github.com/ndkhrapov" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>GitHub</span></a></li>
-        <li><a href="https://x.com/ndkhrapov" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitter"/></svg><span>Twitter</span></a></li>
-        <li><a href="https://www.instagram.com/n.d.khrapov/" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-instagram"/></svg><span>Instagram</span></a></li>
-        <li><a href="https://discord.com/users/281485925865881600" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-discord"/></svg><span>Discord</span></a></li>
-      </ul>
-    </nav>
-
-    <nav class="categories" aria-label="Jump to a category">
-      <ul>
-        <li><a href="#mail"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg>Mail</a></li>
-        <li><a href="#social"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-people"/></svg>Social</a></li>
-        <li><a href="#media"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-video"/></svg>Media</a></li>
-        <li><a href="#chat"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chat"/></svg>Chat</a></li>
-        <li><a href="#gaming"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-games"/></svg>Games</a></li>
-        <li><a href="#profiles"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"/></svg>Web</a></li>
-      </ul>
-    </nav>
-
-    <div class="directory public-directory">
-      <section class="group" id="mail" aria-labelledby="mail-heading">
-        <header class="group-heading">
-          <p class="eyebrow">01 / Mail</p>
-          <h2 id="mail-heading">Email me</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="mailto:n.d.khrapov@gmail.com">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-gmail"/></svg></span>
-            <span><strong>Gmail</strong><small>n.d.khrapov@gmail.com</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@outlook.com">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg></span>
-            <span><strong>Outlook</strong><small>n.d.khrapov@outlook.com</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@icloud.com">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-icloud"/></svg></span>
-            <span><strong>iCloud Mail</strong><small>n.d.khrapov@icloud.com</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@yandex.ru">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-yandex"/></svg></span>
-            <span><strong>Yandex Mail</strong><small>n.d.khrapov@yandex.ru</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@mail.ru">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-maildotru"/></svg></span>
-            <span><strong>Mail.ru</strong><small>n.d.khrapov@mail.ru</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@rambler.ru">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg></span>
-            <span><strong>Rambler Mail</strong><small>n.d.khrapov@rambler.ru</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@yahoo.com">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-yahoo"/></svg></span>
-            <span><strong>Yahoo Mail</strong><small>n.d.khrapov@yahoo.com</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
-          <li><a class="entry" href="mailto:n.d.khrapov@protonmail.com">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-protonmail"/></svg></span>
-            <span><strong>Proton Mail</strong><small>n.d.khrapov@protonmail.com</small></span>
-            <span class="arrow" aria-hidden="true">✉</span>
-          </a></li>
+    <div class="wrap">
+      <nav class="main-links" aria-label="Main links">
+        <ul>
+          <li><a href="mailto:n.d.khrapov@gmail.com"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg><span>Email</span></a></li>
+          <li><a href="https://github.com/ndkhrapov" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>GitHub</span></a></li>
+          <li><a href="https://x.com/ndkhrapov" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitter"/></svg><span>Twitter</span></a></li>
+          <li><a href="https://www.instagram.com/n.d.khrapov/" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-instagram"/></svg><span>Instagram</span></a></li>
+          <li><a href="https://discord.com/users/281485925865881600" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-discord"/></svg><span>Discord</span></a></li>
         </ul>
-      </section>
+      </nav>
 
-      <section class="group" id="social" aria-labelledby="social-heading">
-        <header class="group-heading">
-          <p class="eyebrow">02 / Social</p>
-          <h2 id="social-heading">Social profiles</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="https://www.facebook.com/n.d.khrapov/" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-facebook"/></svg></span>
-            <span><strong>Facebook</strong><small>@n.d.khrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.threads.com/@n.d.khrapov" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-threads"/></svg></span>
-            <span><strong>Threads</strong><small>@n.d.khrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.tiktok.com/@n.d.khrapov" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-tiktok"/></svg></span>
-            <span><strong>TikTok</strong><small>@n.d.khrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.reddit.com/user/ndkhrapov/" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-reddit"/></svg></span>
-            <span><strong>Reddit</strong><small>u/ndkhrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.pinterest.com/ndkhrapov/" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pinterest"/></svg></span>
-            <span><strong>Pinterest</strong><small>@ndkhrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://bsky.app/profile/ndkhrapov.net" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-bluesky"/></svg></span>
-            <span><strong>Bluesky</strong><small>@ndkhrapov.net</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.tumblr.com/ndkhrapov" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-tumblr"/></svg></span>
-            <span><strong>Tumblr</strong><small>@ndkhrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-        </ul>
-      </section>
+      <div class="directory-heading">
+        <h2>Directory</h2>
+        <nav class="categories" aria-label="Jump to a category">
+          <ul>
+            <li><a href="#mail"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg>Mail</a></li>
+            <li><a href="#social"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-people"/></svg>Social</a></li>
+            <li><a href="#media"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-video"/></svg>Media</a></li>
+            <li><a href="#chat"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chat"/></svg>Chat</a></li>
+            <li><a href="#gaming"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-games"/></svg>Games</a></li>
+            <li><a href="#profiles"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"/></svg>Web</a></li>
+          </ul>
+        </nav>
+      </div>
 
-      <section class="group" id="media" aria-labelledby="media-heading">
-        <header class="group-heading">
-          <p class="eyebrow">03 / Media</p>
-          <h2 id="media-heading">Media &amp; creator pages</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="https://www.youtube.com/channel/UC0jWlsh1tMhAz5Gz7PA3aPg" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-youtube"/></svg></span>
-            <span><strong>YouTube</strong><small>My channel</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.twitch.tv/goodguylimony" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitch"/></svg></span>
-            <span><strong>Twitch</strong><small>GoodGuyLimony</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://open.spotify.com/user/p5egjznjq1l8l3v9f7fo3ro2e" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-spotify"/></svg></span>
-            <span><strong>Spotify</strong><small>My profile</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://boosty.to/n.d.khrapov" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-boosty"/></svg></span>
-            <span><strong>Boosty</strong><small>n.d.khrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.donationalerts.com/r/goodguylimony" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alerts"/></svg></span>
-            <span><strong>DonationAlerts</strong><small>GoodGuyLimony</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-        </ul>
-      </section>
+      <div class="directory public-directory">
+        <section class="group" id="mail" aria-labelledby="mail-heading">
+          <header class="group-heading">
+            <p class="eyebrow">01 / Mail</p>
+            <h2 id="mail-heading">Email me</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="mailto:n.d.khrapov@gmail.com">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-gmail"/></svg></span>
+              <span><strong>Gmail</strong><small>n.d.khrapov@gmail.com</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@outlook.com">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg></span>
+              <span><strong>Outlook</strong><small>n.d.khrapov@outlook.com</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@icloud.com">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-icloud"/></svg></span>
+              <span><strong>iCloud Mail</strong><small>n.d.khrapov@icloud.com</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@yandex.ru">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-yandex"/></svg></span>
+              <span><strong>Yandex Mail</strong><small>n.d.khrapov@yandex.ru</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@mail.ru">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-maildotru"/></svg></span>
+              <span><strong>Mail.ru</strong><small>n.d.khrapov@mail.ru</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@rambler.ru">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg></span>
+              <span><strong>Rambler Mail</strong><small>n.d.khrapov@rambler.ru</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@yahoo.com">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-yahoo"/></svg></span>
+              <span><strong>Yahoo Mail</strong><small>n.d.khrapov@yahoo.com</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+            <li><a class="entry" href="mailto:n.d.khrapov@protonmail.com">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-protonmail"/></svg></span>
+              <span><strong>Proton Mail</strong><small>n.d.khrapov@protonmail.com</small></span>
+              <span class="arrow" aria-hidden="true">✉</span>
+            </a></li>
+          </ul>
+        </section>
 
-      <section class="group" id="chat" aria-labelledby="chat-heading">
-        <header class="group-heading">
-          <p class="eyebrow">04 / Chat</p>
-          <h2 id="chat-heading">Messaging</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="https://t.me/ndkhrapov" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-telegram"/></svg></span>
-            <span><strong>Telegram</strong><small>@ndkhrapov</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-        </ul>
-      </section>
+        <section class="group" id="social" aria-labelledby="social-heading">
+          <header class="group-heading">
+            <p class="eyebrow">02 / Social</p>
+            <h2 id="social-heading">Social profiles</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="https://www.facebook.com/n.d.khrapov/" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-facebook"/></svg></span>
+              <span><strong>Facebook</strong><small>@n.d.khrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.threads.com/@n.d.khrapov" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-threads"/></svg></span>
+              <span><strong>Threads</strong><small>@n.d.khrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.tiktok.com/@n.d.khrapov" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-tiktok"/></svg></span>
+              <span><strong>TikTok</strong><small>@n.d.khrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.reddit.com/user/ndkhrapov/" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-reddit"/></svg></span>
+              <span><strong>Reddit</strong><small>u/ndkhrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.pinterest.com/ndkhrapov/" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pinterest"/></svg></span>
+              <span><strong>Pinterest</strong><small>@ndkhrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://bsky.app/profile/ndkhrapov.net" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-bluesky"/></svg></span>
+              <span><strong>Bluesky</strong><small>@ndkhrapov.net</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.tumblr.com/ndkhrapov" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-tumblr"/></svg></span>
+              <span><strong>Tumblr</strong><small>@ndkhrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+          </ul>
+        </section>
 
-      <section class="group" id="gaming" aria-labelledby="gaming-heading">
-        <header class="group-heading">
-          <p class="eyebrow">05 / Games</p>
-          <h2 id="gaming-heading">Gaming profiles</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="https://steamcommunity.com/id/GoodGuyLimony/" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-steam"/></svg></span>
-            <span><strong>Steam</strong><small>GoodGuyLimony</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.roblox.com/users/3929601043/profile" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-roblox"/></svg></span>
-            <span><strong>Roblox</strong><small>GoodGuyLimony</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://www.xbox.com/en-US/play/user/GoodGuyLimony" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-xbox"/></svg></span>
-            <span><strong>Xbox</strong><small>GoodGuyLimony</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-        </ul>
-      </section>
+        <section class="group" id="media" aria-labelledby="media-heading">
+          <header class="group-heading">
+            <p class="eyebrow">03 / Media</p>
+            <h2 id="media-heading">Media &amp; creator pages</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="https://www.youtube.com/channel/UC0jWlsh1tMhAz5Gz7PA3aPg" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-youtube"/></svg></span>
+              <span><strong>YouTube</strong><small>My channel</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.twitch.tv/goodguylimony" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitch"/></svg></span>
+              <span><strong>Twitch</strong><small>GoodGuyLimony</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://open.spotify.com/user/p5egjznjq1l8l3v9f7fo3ro2e" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-spotify"/></svg></span>
+              <span><strong>Spotify</strong><small>My profile</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://boosty.to/n.d.khrapov" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-boosty"/></svg></span>
+              <span><strong>Boosty</strong><small>n.d.khrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.donationalerts.com/r/goodguylimony" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alerts"/></svg></span>
+              <span><strong>DonationAlerts</strong><small>GoodGuyLimony</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+          </ul>
+        </section>
 
-      <section class="group" id="profiles" aria-labelledby="profiles-heading">
-        <header class="group-heading">
-          <p class="eyebrow">06 / Web</p>
-          <h2 id="profiles-heading">Website &amp; code</h2>
-        </header>
-        <ul class="entries">
-          <li><a class="entry" href="https://ndkhrapov.net/">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"/></svg></span>
-            <span><strong>Personal website</strong><small>ndkhrapov.net</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-          <li><a class="entry" href="https://stackoverflow.com/users/27102885/nikita" rel="me">
-            <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stackoverflow"/></svg></span>
-            <span><strong>Stack Overflow</strong><small>Nikita</small></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a></li>
-        </ul>
-      </section>
+        <section class="group" id="chat" aria-labelledby="chat-heading">
+          <header class="group-heading">
+            <p class="eyebrow">04 / Chat</p>
+            <h2 id="chat-heading">Messaging</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="https://t.me/ndkhrapov" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-telegram"/></svg></span>
+              <span><strong>Telegram</strong><small>@ndkhrapov</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+          </ul>
+        </section>
+
+        <section class="group" id="gaming" aria-labelledby="gaming-heading">
+          <header class="group-heading">
+            <p class="eyebrow">05 / Games</p>
+            <h2 id="gaming-heading">Gaming profiles</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="https://steamcommunity.com/id/GoodGuyLimony/" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-steam"/></svg></span>
+              <span><strong>Steam</strong><small>GoodGuyLimony</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.roblox.com/users/3929601043/profile" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-roblox"/></svg></span>
+              <span><strong>Roblox</strong><small>GoodGuyLimony</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://www.xbox.com/en-US/play/user/GoodGuyLimony" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-xbox"/></svg></span>
+              <span><strong>Xbox</strong><small>GoodGuyLimony</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+          </ul>
+        </section>
+
+        <section class="group" id="profiles" aria-labelledby="profiles-heading">
+          <header class="group-heading">
+            <p class="eyebrow">06 / Web</p>
+            <h2 id="profiles-heading">Website &amp; code</h2>
+          </header>
+          <ul class="entries">
+            <li><a class="entry" href="https://ndkhrapov.net/">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"/></svg></span>
+              <span><strong>Personal website</strong><small>ndkhrapov.net</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+            <li><a class="entry" href="https://stackoverflow.com/users/27102885/nikita" rel="me">
+              <span class="symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stackoverflow"/></svg></span>
+              <span><strong>Stack Overflow</strong><small>Nikita</small></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </main>
 
