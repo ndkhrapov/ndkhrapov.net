@@ -189,63 +189,48 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 }
 
 .link-bar {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 1rem;
   padding-inline: clamp(0.25rem, 2vw, 2rem);
   border-block-end: 1px solid var(--line);
   background: var(--panel);
 }
 
-.menu-group { position: relative; min-width: 0; }
+.menu-group { min-width: 0; }
 
 .menu-group summary {
-  padding: 0.9rem 0.1rem;
+  padding: 0.9rem 0;
   list-style-position: inside;
   cursor: pointer;
   font: 0.8rem/1.4 var(--mono);
-  text-align: center;
-  overflow-wrap: anywhere;
 }
 
 .menu-group summary:hover,
 .menu-group[open] summary { background: var(--wash); }
 
 .menu-links {
-  position: absolute;
-  z-index: 1;
-  inset-block-start: 100%;
-  inset-inline-start: 0;
-  width: 13rem;
-  max-height: calc(100vh - 4.5rem);
-  max-height: calc(100dvh - 4.5rem);
-  overflow-y: auto;
   margin: 0;
-  padding: 0.35rem 0.65rem 0.55rem;
+  padding: 0 0 0.75rem 1.2rem;
   list-style: none;
   font: 0.875rem/1.6 var(--mono);
-  border: 1px solid var(--line);
-  background: var(--panel);
 }
 
-.menu-group:nth-last-child(-n + 3) .menu-links {
-  inset-inline: auto 0;
+.menu-links a {
+  display: block;
+  padding-block: 0.2rem;
+  color: inherit;
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
 }
-
-.menu-links a { color: inherit; text-underline-offset: 0.15em; }
 .menu-links a:hover { background: var(--wash); }
 
 @media (max-width: 46rem) {
-  .menu-group { position: static; }
-  .menu-group .menu-links,
-  .menu-group:nth-last-child(-n + 3) .menu-links {
-    inset-inline: 0.5rem;
-    width: auto;
+  .link-bar {
+    display: block;
+    padding-inline: 1rem;
   }
-}
-
-@media (max-width: 24rem) {
-  .menu-group summary { font-size: 0.68rem; }
 }
 
 @media (forced-colors: active) {
