@@ -3,11 +3,22 @@ https://me.ndkhrapov.net {
 	import website_headers
 	import website_errors
 	route {
+		header Cache-Control no-cache
+		encode zstd gzip
+
+		@links_alias path /links/ /links/index.html
+		redir @links_alias /links 308
+		@links path /links /links/directory.css /links/appearance.js
+		handle @links {
+			rewrite /links /links/index.html
+			file_server {
+				root /srv
+			}
+		}
+
 		@gravatar path /header.webp /profile.webp /gravatar.css
 		@unexpected not path / /index.html /styles.css /favicon.svg /header.webp /profile.webp /gravatar.css
 		error @unexpected 404
-		header Cache-Control no-cache
-		encode zstd gzip
 		file_server @gravatar {
 			root /srv/.gravatar/current
 			pass_thru
@@ -16,4 +27,15 @@ https://me.ndkhrapov.net {
 			root /srv/me
 		}
 	}
+}
+
+https://links.ndkhrapov.net {
+	import website_tls
+	import website_headers
+	import website_errors
+	@directory path / /links /links/ /links/index.html
+	redir @directory https://me.ndkhrapov.net/links 308
+	@assets path /links/directory.css /links/appearance.js /favicon.svg
+	redir @assets https://me.ndkhrapov.net{uri} 308
+	error 404
 }
