@@ -2,9 +2,9 @@
 
 Personal landing page: plain static files (`index.html`, `styles.css` and the social icon SVGs). There is no build step.
 
-The public link directory lives in `links/index.html`. It is also available at
-`/links/` on the personal website. The home-network directory is served
-separately by the router and its destinations are stored outside this repository.
+The public link directory lives in `links/index.html` and is served at
+[links.ndkhrapov.net](https://links.ndkhrapov.net/) and `/links/` on the personal
+website.
 
 ## Hosting and deploy
 
