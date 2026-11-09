@@ -1,192 +1,139 @@
 :root {
-  --bg-color: #ffffff;
-  --text-main: #000000;
-  --text-secondary: #666666;
-  --text-tertiary: #767676;
-  --icon-color: #000000;
+  color-scheme: light dark;
+  --paper: #f7f6f2;
+  --ink: #172321;
+  --muted: #525f5b;
+  --accent: #0b6759;
+  --line: #c5cdc6;
+  --hover: #e7efe9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #000000;
-    --text-main: #ffffff;
-    --text-secondary: #aaaaaa;
-    --text-tertiary: #777777;
-    --icon-color: #ffffff;
+    --paper: #141616;
+    --ink: #edf2ee;
+    --muted: #b4c3bc;
+    --accent: #8ce0c7;
+    --line: #414e48;
+    --hover: #20332d;
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
+*, *::before {
   box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: var(--bg-color);
-  transition: background 0.3s ease;
+  min-block-size: 100vh;
+  min-block-size: 100svh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.55 system-ui, sans-serif;
 }
 
 .container {
-  text-align: center;
-  max-width: 90vw;
-  width: 100%;
-  padding: 5vh;
+  inline-size: min(100%, 49rem);
+  padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  color: var(--text-main);
-  transition: color 0.3s ease;
+  margin: 0.35em 0 0;
+  font-size: clamp(2.625rem, 9vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.99;
+  overflow-wrap: anywhere;
 }
 
-.pronouns {
-  color: var(--text-secondary);
-  margin-bottom: 0.3em;
-  transition: color 0.3s ease;
+.intro {
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  text-wrap: pretty;
 }
 
-.dateofbirth {
-  color: var(--text-tertiary);
-  font-size: 0.9em;
-  transition: color 0.3s ease;
+.details {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
 }
 
-.dateformat {
-  color: var(--text-tertiary);
-  font-size: 0.7em;
-  margin-bottom: 1.5em;
-  transition: color 0.3s ease;
+.details span {
+  margin-inline: 0.35rem;
 }
 
-.socials {
+.profiles {
+  margin-block-start: clamp(2rem, 6vw, 3.5rem);
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.profiles ul {
   display: flex;
-  gap: 0.8em;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1em;
+  gap: 0.65rem;
+  margin: 0.875rem 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.socials a {
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  display: block;
-  position: relative;
+.profiles a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 2.75rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 550;
   text-decoration: none;
-  transition: transform 0.3s ease;
 }
 
-.socials a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transition: background-color 0.3s ease;
-
-  -webkit-mask-size: 60%;
-  mask-size: 60%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-
-  background-color: var(--icon-color);
+.profiles a:hover,
+.profiles a:focus-visible {
+  border-color: var(--accent);
+  background: var(--hover);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-.socials a:hover {
-  transform: translateY(-0.1em);
-}
-
-.socials a:focus-visible {
-  outline: 2px solid var(--text-main);
+a:focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.icon {
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
-.twitter::before {
-  -webkit-mask-image: url(twitter.svg);
-  mask-image: url(twitter.svg);
-}
+.twitter { --icon: url(/twitter.svg); }
+.instagram { --icon: url(/instagram.svg); }
+.discord { --icon: url(/discord.svg); }
+.spotify { --icon: url(/spotify.svg); }
+.steam { --icon: url(/steam.svg); }
 
-.instagram::before {
-  -webkit-mask-image: url(instagram.svg);
-  mask-image: url(instagram.svg);
-}
-
-.discord::before {
-  -webkit-mask-image: url(discord.svg);
-  mask-image: url(discord.svg);
-}
-
-.spotify::before {
-  -webkit-mask-image: url(spotify.svg);
-  mask-image: url(spotify.svg);
-}
-
-.steam::before {
-  -webkit-mask-image: url(steam.svg);
-  mask-image: url(steam.svg);
-}
-
-@media (aspect-ratio < 1) {
-  .container {
-    width: 95vw;
-    padding: 3vh;
-  }
-
-  h1 {
-    font-size: 2em;
-    margin-bottom: 0.3em;
-  }
-
-  .pronouns {
-    font-size: 0.95em;
-    margin-bottom: 0.2em;
-  }
-
-  .dateofbirth {
-    font-size: 0.8em;
-  }
-
-  .dateformat {
-    font-size: 0.65em;
-    margin-bottom: 1em;
-  }
-
-  .socials {
-    gap: 0.6em;
-    margin-top: 2vh;
-  }
-
-  .socials a {
-    width: 2.5em;
-    height: 2.5em;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-
-  .socials a:hover {
-    transform: none;
-  }
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  margin-block-start: 1rem;
+  color: var(--accent);
+  text-underline-offset: 0.2em;
 }
