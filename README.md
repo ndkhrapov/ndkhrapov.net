@@ -3,8 +3,8 @@
 Personal landing page: plain static files (`index.html`, `styles.css` and the social icon SVGs). There is no build step.
 
 The public link directory lives in `links/index.html` and is served at
-[links.ndkhrapov.net](https://links.ndkhrapov.net/) and `/links/` on the personal
-website.
+[me.ndkhrapov.net/links](https://me.ndkhrapov.net/links) and `/links/` on the
+apex site. The former links subdomain redirects to the profile site.
 
 ## Hosting and deploy
 
@@ -20,7 +20,7 @@ Deploys are automatic: a scheduled script (on the router or in the Caddy contain
 
 The home `site-sync` container checks the public `ndkhrapov` Gravatar profile every five minutes. It caches the avatar, header image, and background color together in `/srv/.gravatar`. A failed check keeps the previous snapshot, and a GitHub deploy preserves that directory. Caddy serves the cached images and color stylesheet at `me.ndkhrapov.net`, with the checked-in files in `me/` as the initial fallback.
 
-The [self-hosted sync files](.github/self-host/) run with Alpine's `python3` and `py3-pillow`. Copy `sync-gravatar.py` to `/sync-gravatar.py` and `site-sync.sh` to `/site-sync-live.sh` in the container root. The container runs `/bin/sh /site-sync-live.sh`. The `me.Caddyfile` block goes in the existing Caddyfile and uses its shared TLS, header, and error snippets.
+The [self-hosted sync files](.github/self-host/) run with Alpine's `python3` and `py3-pillow`. Copy `sync-gravatar.py` to `/sync-gravatar.py` and `site-sync.sh` to `/site-sync-live.sh` in the container root. The container runs `/bin/sh /site-sync-live.sh`. The site blocks in `me.Caddyfile` go in the existing Caddyfile and use its shared TLS, header, and error snippets.
 
 ## License
 
