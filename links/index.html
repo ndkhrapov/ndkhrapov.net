@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="links-page">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Nikita Khrapov’s profiles across the web.">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <title>Links · Nikita Khrapov</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/links/directory.css?v=10">
+  <script src="/links/theme.js"></script>
+  <link rel="stylesheet" href="/links/directory.css?v=11">
 </head>
-<body class="links-page">
+<body>
   <main class="link-directory" aria-label="Link directory">
+    <label class="theme-picker" hidden>
+      Theme
+      <select id="links-theme">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+
     <ul role="list">
       <li><a href="https://steamcommunity.com/id/GoodGuyLimony/" rel="me">Steam</a></li>
       <li><a href="https://discord.com/users/281485925865881600" rel="me">Discord</a></li>
