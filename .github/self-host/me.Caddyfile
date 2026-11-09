@@ -1,0 +1,19 @@
+https://me.ndkhrapov.net {
+	import website_tls
+	import website_headers
+	import website_errors
+	route {
+		@gravatar path /header.webp /profile.webp /gravatar.css
+		@unexpected not path / /index.html /styles.css /favicon.svg /header.webp /profile.webp /gravatar.css
+		error @unexpected 404
+		header Cache-Control no-cache
+		encode zstd gzip
+		file_server @gravatar {
+			root /srv/.gravatar/current
+			pass_thru
+		}
+		file_server {
+			root /srv/me
+		}
+	}
+}
