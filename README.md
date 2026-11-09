@@ -2,6 +2,10 @@
 
 Personal landing page: plain static files (`index.html`, `styles.css` and the social icon SVGs). There is no build step.
 
+The public link directory lives in `links/index.html`. It is also available at
+`/links/` on the personal website. The home-network directory is served
+separately by the router and its destinations are stored outside this repository.
+
 ## Hosting and deploy
 
 The site is self-hosted, not on GitHub Pages:
