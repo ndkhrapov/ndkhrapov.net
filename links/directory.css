@@ -190,12 +190,17 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .link-tree section + section { margin-block-start: 0.65rem; }
 
-.link-tree h2 {
+.link-tree h2,
+.link-tree h3 {
   margin: 0;
   font: inherit;
   font-weight: 700;
   letter-spacing: normal;
 }
+
+.link-tree #profile-sites { margin-block-start: 1.5rem; }
+#profile-sites > p { margin: 0.2rem 0 0.65rem; }
+#profile-sites > section { margin-inline-start: 1ch; }
 
 .tree-links {
   margin: 0;
