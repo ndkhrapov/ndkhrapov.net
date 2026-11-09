@@ -1,43 +1,51 @@
 :root {
   color-scheme: light dark;
-  --page: #f5f5ee;
-  --panel: #fffefa;
-  --ink: #162923;
-  --muted: #53635b;
-  --accent: #24634c;
-  --line: #d3dbd0;
-  --wash: #e8efe6;
-  --highlight: #24634c;
-  --highlight-ink: #fffefa;
+  --page: #f6f3ed;
+  --panel: #fffdf8;
+  --ink: #24211e;
+  --muted: #625951;
+  --accent: #693d32;
+  --line: #dcd4c8;
+  --wash: #eee0d7;
+  --highlight: #a6442c;
+  --highlight-ink: #fffdf8;
+  --gutter: clamp(1.25rem, 4vw, 9rem);
   --mono: ui-monospace, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --page: #101a17;
-    --panel: #16231e;
-    --ink: #ecf3e8;
-    --muted: #b2c1b7;
-    --accent: #b3dfaa;
-    --line: #374b41;
-    --wash: #23382c;
-    --highlight: #b3dfaa;
-    --highlight-ink: #101a17;
+    --page: #191714;
+    --panel: #221f1b;
+    --ink: #f4eee4;
+    --muted: #c1b6ab;
+    --accent: #efc5b7;
+    --line: #463c35;
+    --wash: #362822;
+    --highlight: #f19f82;
+    --highlight-ink: #241914;
   }
 }
 
-/* Use browser-provided system colors when available, including its accent. */
-@supports (color: AccentColorText) and (color: color-mix(in srgb, Canvas, AccentColor)) {
+/* Chromium supplies the real system accent in the installed app context. */
+@media (display-mode: standalone) {
+  @supports (color: AccentColorText) {
+    :root {
+      --highlight: AccentColor;
+      --highlight-ink: AccentColorText;
+    }
+  }
+}
+
+:root[data-accent="clay"] { --highlight: #a6442c; --highlight-ink: white; }
+:root[data-accent="ocean"] { --highlight: #15678e; --highlight-ink: white; }
+:root[data-accent="moss"] { --highlight: #506f36; --highlight-ink: white; }
+:root[data-accent="iris"] { --highlight: #7246a5; --highlight-ink: white; }
+
+@supports (color: color-mix(in srgb, black, white)) {
   :root {
-    --page: color-mix(in srgb, Canvas 95%, AccentColor);
-    --panel: color-mix(in srgb, Canvas 98%, AccentColor);
-    --ink: CanvasText;
-    --muted: color-mix(in srgb, CanvasText 72%, Canvas);
-    --accent: color-mix(in srgb, CanvasText 74%, AccentColor);
-    --line: color-mix(in srgb, Canvas 82%, CanvasText);
-    --wash: color-mix(in srgb, Canvas 87%, AccentColor);
-    --highlight: AccentColor;
-    --highlight-ink: AccentColorText;
+    --accent: color-mix(in srgb, var(--ink) 72%, var(--highlight));
+    --wash: color-mix(in srgb, var(--panel) 83%, var(--highlight));
   }
 }
 
@@ -51,7 +59,7 @@ body {
 }
 
 .wrap {
-  width: min(calc(100% - 2.5rem), 62rem);
+  width: min(calc(100% - 2 * var(--gutter)), 192rem);
   margin-inline: auto;
 }
 
@@ -91,7 +99,23 @@ body {
 }
 
 .monogram { background: var(--highlight); color: var(--highlight-ink); }
-.edition { color: var(--muted); }
+.edition { color: var(--muted); margin-inline-start: auto; }
+.appearance {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.appearance[hidden] { display: none; }
+.appearance select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+}
 
 .eyebrow, .edition {
   margin: 0;
@@ -102,7 +126,25 @@ body {
 
 .eyebrow { color: var(--accent); }
 
-.intro { padding-block: clamp(2.75rem, 6vw, 5rem) clamp(1.75rem, 4vw, 3rem); }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 8rem);
+  padding-block: clamp(2.5rem, 5vw, 6.5rem) clamp(1.75rem, 3vw, 3.5rem);
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  height: clamp(13rem, 18vw, 31rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--wash);
+}
+.hero-grid { color: var(--accent); opacity: 0.19; }
+.hero-orbits { color: var(--accent); opacity: 0.64; }
+.hero-nodes { color: var(--highlight); }
 
 .intro .eyebrow {
   display: flex;
@@ -114,16 +156,17 @@ body {
 
 h1 {
   margin: 0.1em 0 0.08em;
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  font-weight: 750;
-  line-height: 1;
-  letter-spacing: -0.08em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 7vw, 10.25rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
 }
 
 h1 span { color: var(--highlight); }
 .intro > p:last-child { margin: 0.75rem 0 0; color: var(--muted); font-size: 1.08rem; }
 
-.main-links { margin-block-end: 1.25rem; }
+.main-links { margin-block-end: clamp(2rem, 4vw, 4.5rem); }
 
 .main-links ul {
   display: grid;
@@ -140,7 +183,7 @@ h1 span { color: var(--highlight); }
   justify-content: center;
   gap: 0.6rem;
   height: 100%;
-  min-height: 3.5rem;
+  min-height: clamp(3.5rem, 5vw, 5.25rem);
   padding: 0.5rem 0.2rem;
   border: 1px solid var(--line);
   border-radius: 1.1rem;
@@ -159,7 +202,22 @@ h1 span { color: var(--highlight); }
 
 .main-links .icon { color: var(--accent); }
 
-.categories { margin-block-end: 1.25rem; }
+.directory-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem 2rem;
+  padding-block: 0.95rem;
+  margin-block-end: 0.9rem;
+  border-block-start: 1px solid var(--line);
+}
+.directory-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.85rem, 2.6vw, 3.1rem);
+  font-weight: 400;
+}
 
 .categories ul {
   display: flex;
@@ -195,6 +253,7 @@ h1 span { color: var(--highlight); }
 
 .public-directory {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.7vw, 2rem);
 }
 
 .public-directory .group { scroll-margin-top: 1rem; }
@@ -244,7 +303,7 @@ h2 { margin: 0.2rem 0 0; font-size: 1.45rem; line-height: 1.2; letter-spacing: -
   fill: currentColor;
 }
 
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+a:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .footer {
   margin-block: 2.5rem 0;
@@ -262,12 +321,19 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   text-underline-offset: 0.2em;
 }
 
+@media (min-width: 142rem) {
+  .public-directory { grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: start; }
+}
+
 @media (max-width: 58rem) {
   .public-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 38rem) {
   .directory { grid-template-columns: minmax(0, 1fr); }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 1.35rem; }
+  .hero-art { height: clamp(5rem, 25vw, 9.5rem); }
+  .edition { display: none; }
   .main-links a {
     flex-direction: column;
     gap: 0.35rem;
@@ -278,11 +344,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 }
 
 @media (max-width: 24rem) {
-  .wrap { width: calc(100% - 1.5rem); }
+  :root { --gutter: 0.75rem; }
   .main-links ul { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.25fr) minmax(0, 1fr); }
 }
 
 @media (forced-colors: active) {
-  a:focus-visible { outline-color: Highlight; }
+  a:focus-visible, select:focus-visible { outline-color: Highlight; }
   .public-directory .group:target { border-color: Highlight; }
 }
