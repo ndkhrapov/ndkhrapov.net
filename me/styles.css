@@ -104,13 +104,13 @@ h1 {
 a { color: inherit; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
 a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
-#links {
+.links {
   border: 1px solid var(--line);
   border-radius: 0.6rem;
   background: var(--surface);
 }
 
-#links > summary {
+.links > summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -121,8 +121,8 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
   list-style: none;
 }
 
-#links > summary::-webkit-details-marker { display: none; }
-#links[open] > summary { border-bottom: 1px solid var(--line); }
+.links > summary::-webkit-details-marker { display: none; }
+.links[open] > summary { border-bottom: 1px solid var(--line); }
 
 .chevron {
   width: 0.55rem;
@@ -132,11 +132,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
   transform: rotate(45deg);
 }
 
-#links[open] .chevron { transform: rotate(225deg); }
-#links > a:not([hidden]), #links > noscript a {
-  display: inline-block;
-  margin: 0.9rem 1rem;
-}
+.links[open] .chevron { transform: rotate(225deg); }
 
 .link-directory {
   padding: 1rem;
