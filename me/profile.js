@@ -1,14 +1,25 @@
-const tick=()=>document.querySelector("output").value=new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Irkutsk"})
-tick()
-setInterval(tick,1e3)
+const clock = document.getElementById("clock");
+const clockFormat = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Asia/Irkutsk",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hourCycle: "h23",
+});
+
+function tick() {
+  const time = clockFormat.format(new Date());
+  clock.dateTime = time;
+  clock.textContent = time.split(":").reverse().join(":");
+}
+
+tick();
+setInterval(tick, 1000);
 
 const links = document.getElementById("links");
 const fallback = links.querySelector("a");
-const linksNav = document.querySelector('header a[href^="/landing/links/"]');
-const linksPath = linksNav.pathname;
-const profilePath = linksPath.replace("/landing/links/", "/landing/");
-const languageNav = document.querySelector("header a[lang]");
-const otherProfile = languageNav.pathname;
+const profilePath = "/landing/en";
+const linksPath = "/landing/links/en";
 
 links.addEventListener("toggle", async () => {
   if (links.open !== isLinksRoute()) updateDirectoryRoute(links.open);
@@ -23,9 +34,6 @@ links.addEventListener("toggle", async () => {
     const directory = page.querySelector("main.link-directory");
     if (!directory) return;
 
-    if (document.documentElement.lang === "ru") {
-      directory.querySelector("summary").textContent = "Другие ссылки";
-    }
     const panel = document.createElement("div");
     panel.className = "link-directory";
     panel.append(...directory.children);
@@ -42,9 +50,7 @@ function isLinksRoute() {
 }
 
 function syncDirectory() {
-  const showLinks = isLinksRoute();
-  links.open = showLinks;
-  languageNav.href = showLinks ? otherProfile.replace("/landing/", "/landing/links/") : otherProfile;
+  links.open = isLinksRoute();
 }
 
 function updateDirectoryRoute(showLinks) {
@@ -55,12 +61,6 @@ function updateDirectoryRoute(showLinks) {
   syncDirectory();
 }
 
-linksNav.addEventListener("click", (event) => {
-  if (event.button !== 0 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-  event.preventDefault();
-  updateDirectoryRoute(true);
-  links.querySelector("summary").focus();
-});
 window.addEventListener("popstate", syncDirectory);
 window.addEventListener("hashchange", syncDirectory);
 syncDirectory();

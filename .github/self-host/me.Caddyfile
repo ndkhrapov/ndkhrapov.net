@@ -4,14 +4,13 @@ https://me.ndkhrapov.net {
 	import website_errors
 	route {
 		header Cache-Control no-cache
-		@profile_documents path /landing/en /landing/ru /landing/links/en /landing/links/ru
+		@profile_documents path /landing/en /landing/links/en
 		header @profile_documents Cache-Control "no-cache, no-transform"
 		encode zstd gzip
 
-		@profile_alias path / /index.html /landing /landing/
+		@profile_alias path / /index.html /landing /landing/ /ru.html /landing/ru
 		redir @profile_alias /landing/en 308
-		redir /ru.html /landing/ru 308
-		@links_alias path /links /links/ /links/index.html
+		@links_alias path /links /links/ /links/index.html /landing/links/ru
 		redir @links_alias /landing/links/en 308
 		@links path /links/directory.html /links/directory.css /links/appearance.js
 		handle @links {
@@ -23,11 +22,9 @@ https://me.ndkhrapov.net {
 
 		@english path /landing/en /landing/links/en
 		rewrite @english /index.html
-		@russian path /landing/ru /landing/links/ru
-		rewrite @russian /ru.html
 
 		@gravatar path /header.webp /profile.webp /gravatar.css
-		@unexpected not path /index.html /ru.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
+		@unexpected not path /index.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
 		error @unexpected 404
 		file_server @gravatar {
 			root /srv/.gravatar/current
