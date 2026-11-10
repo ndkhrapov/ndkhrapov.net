@@ -161,12 +161,13 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
   fill: currentColor;
 }
 
-.featured-links .brand-steam { --brand: #1b2838; }
+.featured-links .brand-steam { --brand: linear-gradient(125deg, #171d25, #2a475e); }
 .featured-links .brand-discord { --brand: #5865f2; }
 .featured-links .brand-spotify { --brand: #1ed760; color: #121212; }
 .featured-links .brand-tiktok { --brand: #121212; border-color: #454543; }
-.featured-links .brand-instagram { --brand: linear-gradient(115deg, #833ab4, #c13584, #ab4228); }
-.featured-links .brand-twitter { --brand: #1d9bf0; color: #08243b; }
+.featured-links .brand-instagram { --brand: linear-gradient(115deg, #7638fa, #d300c5 36%, #ff0069 68%, #ff7a00); }
+.featured-links .brand-instagram svg { filter: drop-shadow(0 1px 1px rgb(52 0 43 / 0.55)); }
+.featured-links .brand-twitter { --brand: #1d9bf0; }
 
 @media (forced-colors: active) {
   .featured-links a { border-color: LinkText; }
