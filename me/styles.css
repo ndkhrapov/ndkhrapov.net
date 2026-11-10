@@ -1,20 +1,18 @@
 html{color-scheme:light dark;font:1rem system-ui}body{margin:2.5%}
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
+header + label:not([hidden]) { display: block; margin-block-start: 0.5rem; }
 
 #links { margin-block-start: 1rem; }
 #links summary { cursor: pointer; width: fit-content; }
 #links .link-directory {
-  color-scheme: light dark;
   background: Canvas;
   color: CanvasText;
   margin-block-start: 0.5rem;
   padding: 0.75rem;
   font: 0.9rem/1.55 ui-monospace, Consolas, monospace;
 }
-#links .link-directory[data-theme="light"] { color-scheme: light; }
-#links .link-directory[data-theme="dark"] { color-scheme: dark; }
 #links .link-directory a { color: inherit; }
 #links .link-directory ul { margin: 0; padding: 0; list-style: none; }
 #links .link-directory details { margin-block-start: 0.5rem; }
 #links .link-directory details ul { padding-inline-start: 1.25rem; }
-#links .theme-picker:not([hidden]) { display: block; margin-block-end: 0.75rem; }
-#links .theme-picker select { font: inherit; }
