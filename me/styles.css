@@ -1,7 +1,4 @@
 html{color-scheme:light dark;font:1rem system-ui}body{margin:2.5%}
-html[data-theme="light"] { color-scheme: light; }
-html[data-theme="dark"] { color-scheme: dark; }
-header + label:not([hidden]) { display: block; margin-block-start: 0.5rem; }
 
 #links { margin-block-start: 1rem; }
 #links summary { cursor: pointer; width: fit-content; }
