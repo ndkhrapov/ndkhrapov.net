@@ -139,25 +139,38 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
 }
 
 .featured-links a {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
+  display: grid;
+  place-items: center;
   height: 100%;
-  padding: 1rem;
-  border: 1px solid var(--line);
+  padding: 0.9rem 0.75rem;
+  border: 1px solid transparent;
   border-radius: 0.55rem;
-  background: var(--surface);
-  font-weight: 600;
+  background: var(--brand);
+  color: #fff;
   text-decoration: none;
 }
 
-.featured-links a:hover { border-color: var(--muted); text-decoration: underline; }
+.featured-links a:hover { box-shadow: inset 0 0 0 2px currentColor; }
+.featured-links a:focus-visible { outline-color: var(--ink); }
 
 .featured-links svg {
-  width: 1.4rem;
-  height: 1.4rem;
+  display: block;
+  width: 100%;
+  max-width: 10.5rem;
+  height: 2.25rem;
   fill: currentColor;
+}
+
+.featured-links .brand-steam { --brand: #1b2838; }
+.featured-links .brand-discord { --brand: #5865f2; }
+.featured-links .brand-spotify { --brand: #1ed760; color: #121212; }
+.featured-links .brand-tiktok { --brand: #121212; border-color: #454543; }
+.featured-links .brand-instagram { --brand: linear-gradient(115deg, #833ab4, #c13584, #ab4228); }
+.featured-links .brand-twitter { --brand: #1d9bf0; color: #08243b; }
+
+@media (forced-colors: active) {
+  .featured-links a { border-color: LinkText; }
+  .featured-links svg, .featured-links svg [fill] { fill: LinkText; }
 }
 
 .link-directory details {
