@@ -1,5 +1,5 @@
 (() => {
-  const root = document.documentElement;
+  const root = document.querySelector("#links .link-directory") ?? document.documentElement;
   const storageKey = "links-theme";
 
   try {
@@ -11,7 +11,7 @@
     // Follow the system when browser storage is unavailable.
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function connectThemePicker() {
     const select = document.getElementById("links-theme");
     select.value = root.dataset.theme ?? "system";
     select.closest("label").hidden = false;
@@ -34,5 +34,11 @@
         // The current choice still applies for this page visit.
       }
     });
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", connectThemePicker);
+  } else {
+    connectThemePicker();
+  }
 })();
