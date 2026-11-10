@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Nikita Khrapov</title>
   <link rel="icon" href="/favicon.svg">
-  <link rel="stylesheet" href="/styles.css?v=10">
-  <script defer src="/profile.js?v=7"></script>
+  <link rel="stylesheet" href="/styles.css?v=11">
+  <script defer src="/profile.js?v=8"></script>
 </head>
 <body>
   <main class="profile">
@@ -45,7 +45,8 @@
 
     <details id="links">
       <summary>Links <span class="chevron" aria-hidden="true"></span></summary>
-      <a href="/links/directory.html">Open the links directory</a>
+      <a class="directory-fallback" href="/links/directory.html" hidden>Open the links directory</a>
+      <noscript><a href="/links/directory.html">Open the links directory</a></noscript>
     </details>
   </main>
 </body>
