@@ -1,17 +1,52 @@
 <!doctype html>
-<html lang=en>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Nikita Khrapov</title>
-<link rel=icon href=/favicon.svg>
-<link rel=stylesheet href=/styles.css?v=8>
-<script defer src=/profile.js?v=7></script>
-<header>@n.d.khrapov</header>
-<h1>Nikita Denisovich Khrapov</h1>
-<div class=nickname>cringeulya</div>
-<p>he/him/his<br><time datetime=2000-07-16>2000 July 16th</time></p>
-<footer>City of Irkutsk<br>
-Russian Federation<br>
-Local Time <time id=clock title="Irkutsk time">—</time><br>
-<a href=mailto:n.d.khrapov@gmail.com>n.d.khrapov@gmail.com</a></footer>
-<details id=links><summary>Links</summary><a href=/links/directory.html>Open the links directory</a></details>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nikita Khrapov</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css?v=9">
+  <script defer src="/profile.js?v=7"></script>
+</head>
+<body>
+  <main class="profile">
+    <header>
+      <p class="handle">@n.d.khrapov</p>
+      <h1>Nikita Denisovich Khrapov</h1>
+      <p class="nickname"><span class="label">Nickname</span> cringeulya</p>
+    </header>
+
+    <dl class="facts">
+      <div>
+        <dt class="label">Pronouns</dt>
+        <dd>he/him/his</dd>
+      </div>
+      <div>
+        <dt class="label">Born</dt>
+        <dd><time datetime="2000-07-16">2000 July 16th</time></dd>
+      </div>
+    </dl>
+
+    <div class="place">
+      <div>
+        <span class="city">City of Irkutsk</span>
+        <span class="country">Russian Federation</span>
+      </div>
+      <div class="local-time">
+        <span class="label">Local Time</span>
+        <time id="clock" title="Irkutsk time">—</time>
+      </div>
+    </div>
+
+    <div class="contact">
+      <span class="label">Email</span>
+      <a href="mailto:n.d.khrapov@gmail.com">n.d.khrapov@gmail.com</a>
+    </div>
+
+    <details id="links">
+      <summary>Links <span class="chevron" aria-hidden="true"></span></summary>
+      <a href="/links/directory.html">Open the links directory</a>
+    </details>
+  </main>
+</body>
+</html>

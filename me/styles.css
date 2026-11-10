@@ -1,21 +1,157 @@
-html { color-scheme: light dark; font: 1rem/1.55 system-ui; }
-body { max-width: 38rem; margin: 8vh auto; padding: 0 1.25rem; }
-
-header, .nickname { color: GrayText; font: 0.85rem monospace; }
-h1 { margin: 0.5rem 0 0; font-size: 1.4rem; }
-.nickname + p { margin-block: 0.5rem 1.25rem; }
-footer { border-top: 1px solid GrayText; padding-top: 0.75rem; }
-a { color: inherit; text-underline-offset: 0.18em; }
-#clock { font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-#links { margin-block-start: 1rem; }
-#links summary { cursor: pointer; width: fit-content; }
-#links > summary { font-weight: 600; }
-.link-directory {
-  margin-block-start: 0.5rem;
-  padding: 0.75rem;
-  font: 0.9rem/1.55 ui-monospace, Consolas, monospace;
+:root {
+  color-scheme: light dark;
+  --page: #f7f7f5;
+  --surface: #fff;
+  --ink: #20201e;
+  --muted: #595957;
+  --line: #d5d5cf;
+  --mono: ui-monospace, Consolas, monospace;
 }
-.link-directory ul { margin: 0; padding: 0; list-style: none; }
-.link-directory details { margin-block-start: 0.5rem; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #171716;
+    --surface: #222221;
+    --ink: #f2f2ef;
+    --muted: #b8b8b2;
+    --line: #454543;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+
+.profile {
+  max-width: 43rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 9vh, 6rem) clamp(1.25rem, 5vw, 2rem);
+}
+
+.handle {
+  margin: 0;
+  color: var(--muted);
+  font: 0.82rem/1.5 var(--mono);
+}
+
+h1 {
+  margin: 0.5rem 0 0.9rem;
+  font: 500 clamp(2rem, 5.5vw, 2.9rem)/1.08 Georgia, serif;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.nickname {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  font: 0.88rem/1.5 var(--mono);
+}
+
+.label {
+  color: var(--muted);
+  font: 650 0.7rem/1.4 system-ui, sans-serif;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 1.25rem;
+  padding-block: 0.9rem;
+  border-block: 1px solid var(--line);
+}
+
+.facts dd { margin: 0.3rem 0 0; }
+
+.place {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+
+.city { display: block; font-weight: 650; }
+.country { display: block; color: var(--muted); font-size: 0.88rem; }
+.local-time .label { display: block; }
+
+#clock {
+  display: block;
+  margin-block-start: 0.2rem;
+  font: 1.15rem/1.2 var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.contact {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin-block: 1.25rem;
+}
+
+a { color: inherit; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+#links {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+
+#links > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-radius: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+
+#links > summary::-webkit-details-marker { display: none; }
+#links[open] > summary { border-bottom: 1px solid var(--line); }
+
+.chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+#links[open] .chevron { transform: rotate(225deg); }
+#links > a { display: inline-block; margin: 0.9rem 1rem; }
+
+.link-directory {
+  padding: 0.9rem 1rem;
+  font: 0.9rem/1.6 var(--mono);
+}
+
+.link-directory ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-directory details { margin-block-start: 0.75rem; }
 .link-directory details ul { padding-inline-start: 1.25rem; }
+.link-directory summary { cursor: pointer; width: fit-content; }
