@@ -2,9 +2,10 @@
 
 Personal landing page: plain static files (`index.html`, `styles.css` and the social icon SVGs). There is no build step.
 
-The public link directory lives in `links/index.html` and is served at
-[me.ndkhrapov.net/links](https://me.ndkhrapov.net/links) and `/links/` on the
-apex site. The former links subdomain redirects to the profile site.
+The public link directory lives in `links/index.html`. It opens below the
+profile at [`/landing/links/en`](https://me.ndkhrapov.net/landing/links/en)
+or [`/landing/links/ru`](https://me.ndkhrapov.net/landing/links/ru).
+The former links subdomain redirects to the English directory.
 
 ## Hosting and deploy
 

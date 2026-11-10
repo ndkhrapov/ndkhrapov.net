@@ -4,22 +4,30 @@ https://me.ndkhrapov.net {
 	import website_errors
 	route {
 		header Cache-Control no-cache
-		@profile_documents path / /index.html /ru.html
+		@profile_documents path /landing/en /landing/ru /landing/links/en /landing/links/ru
 		header @profile_documents Cache-Control "no-cache, no-transform"
 		encode zstd gzip
 
-		@links_alias path /links/ /links/index.html
-		redir @links_alias /links 308
-		@links path /links /links/directory.css /links/appearance.js
+		@profile_alias path / /index.html /landing /landing/
+		redir @profile_alias /landing/en 308
+		redir /ru.html /landing/ru 308
+		@links_alias path /links /links/ /links/index.html
+		redir @links_alias /landing/links/en 308
+		@links path /links/directory.html /links/directory.css /links/appearance.js
 		handle @links {
-			rewrite /links /links/index.html
+			rewrite /links/directory.html /links/index.html
 			file_server {
 				root /srv
 			}
 		}
 
+		@english path /landing/en /landing/links/en
+		rewrite @english /index.html
+		@russian path /landing/ru /landing/links/ru
+		rewrite @russian /ru.html
+
 		@gravatar path /header.webp /profile.webp /gravatar.css
-		@unexpected not path / /index.html /ru.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
+		@unexpected not path /index.html /ru.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
 		error @unexpected 404
 		file_server @gravatar {
 			root /srv/.gravatar/current
@@ -36,7 +44,7 @@ https://links.ndkhrapov.net {
 	import website_headers
 	import website_errors
 	@directory path / /links /links/ /links/index.html
-	redir @directory https://me.ndkhrapov.net/links 308
+	redir @directory https://me.ndkhrapov.net/landing/links/en 308
 	@assets path /links/directory.css /links/appearance.js /favicon.svg
 	redir @assets https://me.ndkhrapov.net{uri} 308
 	error 404

@@ -1,5 +1,5 @@
 (() => {
-  const root = document.querySelector("#links .link-directory") ?? document.documentElement;
+  const root = document.documentElement;
   const storageKey = "links-theme";
 
   try {
@@ -13,6 +13,7 @@
 
   function connectThemePicker() {
     const select = document.getElementById("links-theme");
+    if (!select) return;
     select.value = root.dataset.theme ?? "system";
     select.closest("label").hidden = false;
 

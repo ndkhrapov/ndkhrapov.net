@@ -4,6 +4,9 @@ setInterval(tick,1e3)
 
 const links = document.getElementById("links");
 const fallback = links.querySelector("a");
+const linksNav = document.querySelector('header a[href^="/landing/links/"]');
+const languageNav = document.querySelector("header a[lang]");
+const otherProfile = languageNav.pathname;
 
 links.addEventListener("toggle", async () => {
   if (!links.open || !fallback.isConnected || links.hasAttribute("aria-busy")) return;
@@ -17,12 +20,13 @@ links.addEventListener("toggle", async () => {
     const directory = page.querySelector("main.link-directory");
     if (!directory) return;
 
+    if (document.documentElement.lang === "ru") {
+      directory.querySelector("summary").textContent = "Другие ссылки";
+    }
     const panel = document.createElement("div");
     panel.className = "link-directory";
-    panel.lang = page.documentElement.lang;
     panel.append(...directory.children);
     fallback.replaceWith(panel);
-    await import("/links/appearance.js?v=2");
   } catch {
     // The standalone link remains available if the directory cannot load.
   } finally {
@@ -30,12 +34,19 @@ links.addEventListener("toggle", async () => {
   }
 });
 
-function openLinkedDirectory() {
-  if (location.hash === "#links") links.open = true;
+function syncDirectory() {
+  const showLinks = location.pathname === linksNav.pathname || location.hash === "#links";
+  links.open = showLinks;
+  languageNav.href = showLinks ? otherProfile.replace("/landing/", "/landing/links/") : otherProfile;
 }
 
-document.querySelector('header a[href="#links"]').addEventListener("click", () => {
-  links.open = true;
+linksNav.addEventListener("click", (event) => {
+  if (event.button !== 0 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+  event.preventDefault();
+  if (location.pathname !== linksNav.pathname) history.pushState(null, "", linksNav.href);
+  syncDirectory();
+  links.querySelector("summary").focus();
 });
-window.addEventListener("hashchange", openLinkedDirectory);
-openLinkedDirectory();
+window.addEventListener("popstate", syncDirectory);
+window.addEventListener("hashchange", syncDirectory);
+syncDirectory();
