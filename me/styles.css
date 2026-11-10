@@ -1,16 +1,16 @@
 html { color-scheme: light dark; font: 1rem/1.55 system-ui; }
 body { max-width: 38rem; margin: 8vh auto; padding: 0 1.25rem; }
 
-header, .name span { color: GrayText; font: 0.85rem monospace; }
-.name { margin-block-start: 0.5rem; }
-h1 { display: inline; margin: 0; font-size: 1.4rem; }
-.name + p { margin-block: 0 1.25rem; }
+header, .nickname { color: GrayText; font: 0.85rem monospace; }
+h1 { margin: 0.5rem 0 0; font-size: 1.4rem; }
+.nickname + p { margin-block: 0.5rem 1.25rem; }
 footer { border-top: 1px solid GrayText; padding-top: 0.75rem; }
 a { color: inherit; text-underline-offset: 0.18em; }
 #clock { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 #links { margin-block-start: 1rem; }
 #links summary { cursor: pointer; width: fit-content; }
+#links > summary { font-weight: 600; }
 .link-directory {
   margin-block-start: 0.5rem;
   padding: 0.75rem;
