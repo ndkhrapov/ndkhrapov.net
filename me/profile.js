@@ -17,13 +17,14 @@ tick();
 setInterval(tick, 1000);
 
 const links = document.getElementById("links");
-const fallback = links.querySelector("a");
+const fallback = links.querySelector(".directory-fallback");
 const profilePath = "/landing/en";
 const linksPath = "/landing/links/en";
 
 links.addEventListener("toggle", async () => {
   if (links.open !== isLinksRoute()) updateDirectoryRoute(links.open);
   if (!links.open || !fallback.isConnected || links.hasAttribute("aria-busy")) return;
+  fallback.hidden = true;
   links.setAttribute("aria-busy", "true");
 
   try {
@@ -39,8 +40,9 @@ links.addEventListener("toggle", async () => {
     panel.append(...directory.children);
     fallback.replaceWith(panel);
   } catch {
-    // The standalone link remains available if the directory cannot load.
+    // Show the standalone link if the directory cannot load.
   } finally {
+    if (fallback.isConnected) fallback.hidden = false;
     links.removeAttribute("aria-busy");
   }
 });

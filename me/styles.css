@@ -133,11 +133,14 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
 }
 
 #links[open] .chevron { transform: rotate(225deg); }
-#links > a { display: inline-block; margin: 0.9rem 1rem; }
+#links > a:not([hidden]), #links > noscript a {
+  display: inline-block;
+  margin: 0.9rem 1rem;
+}
 
 .link-directory {
-  padding: 0.9rem 1rem;
-  font: 0.9rem/1.6 var(--mono);
+  padding: 1rem;
+  font-size: 0.9rem;
 }
 
 .link-directory ul {
@@ -146,6 +149,44 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
   list-style: none;
 }
 
-.link-directory details { margin-block-start: 0.75rem; }
-.link-directory details ul { padding-inline-start: 1.25rem; }
-.link-directory summary { cursor: pointer; width: fit-content; }
+.link-directory > ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.link-directory > ul a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--page);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-directory > ul a:hover { text-decoration: underline; }
+
+.link-directory details {
+  margin-block-start: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.link-directory summary {
+  padding-block: 0.65rem 0.2rem;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-directory details ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 1rem;
+  padding: 0.5rem 0 0.25rem 1rem;
+}
+
+@media (max-width: 28rem) {
+  .link-directory > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .link-directory details ul { grid-template-columns: 1fr; }
+}
