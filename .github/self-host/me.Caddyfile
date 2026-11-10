@@ -1,30 +1,26 @@
+# Import this snippet in the apex HTTPS site to preserve old directory URLs.
+(profile_links_redirect) {
+	@profile_links path /links /links/ /links/index.html /links/directory.html
+	redir @profile_links "https://me.ndkhrapov.net/#links" 308
+}
+
 https://me.ndkhrapov.net {
 	import website_tls
 	import website_headers
 	import website_errors
 	route {
 		header Cache-Control no-cache
-		@profile_documents path /landing/en /landing/links/en
+		@profile_documents path /
 		header @profile_documents Cache-Control "no-cache, no-transform"
 		encode zstd gzip
 
-		@profile_alias path / /index.html /landing /landing/ /ru.html /landing/ru
-		redir @profile_alias /landing/en 308
-		@links_alias path /links /links/ /links/index.html /landing/links/ru
-		redir @links_alias /landing/links/en 308
-		@links path /links/directory.html /links/directory.css /links/appearance.js
-		handle @links {
-			rewrite /links/directory.html /links/index.html
-			file_server {
-				root /srv
-			}
-		}
-
-		@english path /landing/en /landing/links/en
-		rewrite @english /index.html
+		@profile_alias path /index.html /landing /landing/ /landing/en /ru.html /landing/ru
+		redir @profile_alias / 308
+		@links_alias path /links /links/ /links/index.html /links/directory.html /landing/links/en /landing/links/ru
+		redir @links_alias "/#links" 308
 
 		@gravatar path /header.webp /profile.webp /gravatar.css
-		@unexpected not path /index.html /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
+		@unexpected not path / /styles.css /profile.js /favicon.svg /header.webp /profile.webp /gravatar.css
 		error @unexpected 404
 		file_server @gravatar {
 			root /srv/.gravatar/current
@@ -40,9 +36,7 @@ https://links.ndkhrapov.net {
 	import website_tls
 	import website_headers
 	import website_errors
-	@directory path / /links /links/ /links/index.html
-	redir @directory https://me.ndkhrapov.net/landing/links/en 308
-	@assets path /links/directory.css /links/appearance.js /favicon.svg
-	redir @assets https://me.ndkhrapov.net{uri} 308
+	redir / "https://me.ndkhrapov.net/#links" 308
+	import profile_links_redirect
 	error 404
 }
