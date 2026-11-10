@@ -183,15 +183,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   --accent: #282828;
 }
 
-.links-page[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #161616;
-  --ink: #fafafa;
-  --accent: #dedede;
-}
-
 @media (prefers-color-scheme: dark) {
-  .links-page:not([data-theme]) {
+  .links-page {
     color-scheme: dark;
     --page: #161616;
     --ink: #fafafa;
