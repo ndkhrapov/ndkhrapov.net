@@ -46,16 +46,10 @@ h1 {
   text-wrap: balance;
 }
 
-.nickname {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
+.bio {
   margin: 0;
-  padding: 0.3rem 0.65rem;
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  background: var(--surface);
-  font: 0.88rem/1.5 var(--mono);
+  color: var(--muted);
+  font-style: italic;
 }
 
 .label {
