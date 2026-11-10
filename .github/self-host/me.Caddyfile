@@ -4,6 +4,8 @@ https://me.ndkhrapov.net {
 	import website_errors
 	route {
 		header Cache-Control no-cache
+		@profile_documents path / /index.html /ru.html
+		header @profile_documents Cache-Control "no-cache, no-transform"
 		encode zstd gzip
 
 		@links_alias path /links/ /links/index.html
