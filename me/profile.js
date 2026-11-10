@@ -10,7 +10,7 @@ const clockFormat = new Intl.DateTimeFormat("en-GB", {
 function tick() {
   const time = clockFormat.format(new Date());
   clock.dateTime = time;
-  clock.textContent = time.split(":").reverse().join(":");
+  clock.textContent = time;
 }
 
 tick();
